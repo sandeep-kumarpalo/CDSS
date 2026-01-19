@@ -129,7 +129,8 @@ def care_flow_sankey():
             label=["Primary Care", "Specialist", "Emergency", "Follow-up"],
             color=["#2B60DE", "#6495ED", "#FF6347", "#3CB371"]  # Professional color palette
         ),
-        link=dict(
+        textfont=dict(color="white", size=12),  # Set node label font to white for readability
+        link=dict( 
             source=[0, 1, 0, 2],  # From nodes
             target=[2, 3, 2, 3],  # To nodes
             value=[8, 4, 2, 2],
