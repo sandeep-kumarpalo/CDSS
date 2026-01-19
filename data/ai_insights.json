@@ -1,0 +1,324 @@
+{
+  "admin_data": {
+    "total_patients": 2287,
+    "high_risk_cohort": 19,
+    "avoidable_cost_exposure": "High",
+    "ai_executive_brief": "Rising hospitalizations are driven by a small but critical patient cohort with overlapping chronic conditions (e.g., hypertension in 40% from conditions.csv), care gaps (e.g., missed follow-ups in careplans.csv), and insurance transitions (from payer_transitions.csv). Addressing this cohort first yields the highest operational and financial ROI, with allergies (e.g., latex in 20%) amplifying procedural risks.",
+    "key_metrics": {
+      "patients_analyzed": 2287,
+      "high_risk_percentage": 19,
+      "avoidable_cost_index": 0.68,
+      "ai_confidence": "High (multi-source consistency from observations.csv vitals and conditions.csv)"
+    },
+    "risk_distribution": {
+      "high": 19,
+      "medium": 40,
+      "low": 41
+    },
+    "ai_root_cause_insight": "Comorbidity alone does not explain high risk (e.g., hypertension + anemia combos in conditions.csv). Insurance transitions (payer_transitions.csv) and missed follow-ups act as risk multipliers, accelerating deterioration, with observations.csv showing avg BP 130/85 mmHg in high-risk.",
+    "risk_ownership_lens": [
+      {"type": "Clinical risk (e.g., chronic heart failure)", "ownership": "Care Management"},
+      {"type": "Screening gaps (e.g., lipid checks in careplans.csv)", "ownership": "Preventive Programs"},
+      {"type": "Insurance-driven risk (transitions in 18%)", "ownership": "Revenue Cycle & Payer Ops"}
+    ],
+    "ai_care_breakdown_prediction": "Patients with ≥2 missed follow-ups (from careplans.csv) and ≥1 insurance transition (payer_transitions.csv) have a 3× likelihood of emergency escalation within 6 months, often linked to allergies (allergies.csv) like pollen exacerbating respiratory issues.",
+    "ai_failure_pattern_insight": "Care plans exist (e.g., respiratory therapy in careplans.csv), but continuity breaks during payer transitions — creating invisible gaps that surface later as emergencies, with devices.csv showing sparse implants like stents in cardiac cases.",
+    "cost_treemap_data": {
+      "labels": ["Medications", "Procedures", "Encounters", "Immunizations"],
+      "values": [100106420.41, 5726963, 16525178, 2238309]
+    },
+    "ai_financial_leakage_insight": "Out-of-pocket spikes (medications.csv) and duplicate encounters (encounters.csv) cluster after insurance transitions. Stabilizing coverage earlier has greater impact than late-stage cost controls, with avg QOLS 0.85 from observations.csv indicating quality-cost ties.",
+    "avoidable_cost_index": 0.68,
+    "hospitalization_risk_distribution": {"low": 50, "medium": 30, "high": 20},
+    "ai_forecast": "Without intervention, aging demographics (patients.csv avg age 45) combined with chronic disease prevalence (conditions.csv: 30% sinusitis/bronchitis) will increase hospitalization load by ~20%, amplified by allergies (e.g., dust mites).",
+    "counterfactual_intelligence": "If preventive interventions (careplans.csv) had occurred 12 months earlier for the top 10% risk cohort, projected hospitalizations drop by ~22%, based on observations.csv trends.",
+    "pre_loaded_prompts": [
+      "Where is the system failing patients?",
+      "Which risks are clinical vs operational?",
+      "Where should we invest for maximum ROI?"
+    ],
+    "ai_governance": {
+      "data_type": "Synthetic, de-identified data",
+      "reasoning": "Hybrid reasoning (rules + probabilistic inference via LLM and CrewAI agents)",
+      "outputs": "Explainable & auditable outputs",
+      "role": "Augments — does not replace — human judgment"
+    },
+    "equity_heatmap": {
+      "disparities": "Disparities amplify in urban cohorts (e.g., Fitchburg, MA from patients.csv)—insurance instability hits Hispanic patients 1.5x harder, with conditions.csv showing higher acute issues."
+    },
+    "ai_alerts": [
+      "Magic Tip: For fragmented care, integrate payer transitions to avoid coverage gaps.",
+      "142 patients trending toward high hospitalization risk (from conditions.csv chronic flags)",
+      "Insurance instability detected in 18% of chronic cohort (payer_transitions.csv)",
+      "Preventive care gaps rising in metabolic & respiratory pathways (careplans.csv)"
+    ]
+  },
+  "doctor": {
+    "meta": {
+      "population_context": "Insights synthesized using longitudinal patterns across ~2,287 synthetic patients spanning multi-year clinical, encounter, and system-level histories from conditions, observations, careplans, allergies, and devices data."
+    },
+    "hero_patients": {
+      "14289f20-085c-4fc8-bdd8-e2074166d91f": {
+        "name": "Margaret Collins",
+        "archetype": "Chronic Risk Accumulator",
+        "risk_score": 0.85,  
+        "age": 57,
+        "gender": "Female",
+        "ai_patient_state": "In reviewing this patient's history, we see a pattern where hypertension since 1992 has intertwined with prediabetes and obesity from 2008, creating a layered risk profile that's compounded by recurring acute infections like viral pharyngitis in 2010 and sinusitis in 2011-2016. The stable but elevated BP (161/101 mmHg) and HbA1c (6.2%) suggest incomplete control over time, while allergies to mould, dust, and pollen likely contribute to respiratory vulnerabilities, potentially explaining bronchitis episodes. No devices or imaging indicate advanced interventions yet, but this trajectory points to gradual metabolic and cardiovascular strain without aggressive escalation.",
+        "ai_temporal_reasoning": "Looking back, the patient's condition onset in the early 1990s with hypertension set a foundation, but the 2008 cluster of prediabetes, obesity, and anemia marked a turning point where multi-system involvement began. Gaps in care are evident: for instance, between 2014 bronchitis and 2016 sinusitis, there's no recorded preventive respiratory plan, leading to repeated acute care. Insurance stability (from payers) appears consistent, but the lack of longitudinal device monitoring (e.g., no stents in devices.csv) might have missed opportunities for earlier cardiac assessment, resulting in a slow-build risk rather than sudden events.",
+        "ai_recommended_focus": [
+          "Prioritize integrated management of metabolic cluster: regular HbA1c and BMI tracking with dietary interventions to address prediabetes/obesity overlap.",
+          "Incorporate allergy mitigation into respiratory care: given environmental triggers, consider immunotherapy or environmental controls to prevent infection cycles.",
+          "Establish proactive monitoring rhythm: schedule quarterly reviews to catch BP trends early, potentially incorporating home monitoring tools before device implantation becomes necessary."
+        ],
+        "ai_conclusion": "This patient's risk stems from interconnected chronic factors that have simmered over decades; focusing on holistic, preventive integration now could stabilize her trajectory and reduce the need for future acute interventions, ultimately improving her QOLS beyond the current 0.8.",
+        "predictions": "Estimated hospitalization risk in the next 12 months: ~0.85 if unaddressed, driven by anemia and viral infections (conditions.csv).",
+        "care_gaps": "AI Gap Alert: Missed lipid screening and delayed follow-up after infection increase downstream risk (careplans.csv respiratory therapy).",
+        "suggested_action": "Close preventive gaps before escalation; integrate allergy management.",
+        "cost_coverage_insight": "Medication continuity disrupted during payer transitions (payer_transitions.csv). Alternative generics could reduce patient burden, but insurance stabilization yields greater clinical impact.",
+        "co_pilot_prompts": {
+          "Summarize this patient in one paragraph": "Margaret Collins, 57F, has chronic hypertension (1992), prediabetes/obesity (2008), and anemia, with recurring respiratory infections amplified by allergies. Stable but elevated vitals suggest gradual strain.",
+          "What should I focus on in the next visit?": "Review BP/HbA1c trends, discuss diet for metabolic control, and plan allergy testing to prevent flares.",
+          "Why is this patient high risk despite treatment?": "Despite meds, incomplete control and care gaps allow comorbidities to accumulate, with allergies adding respiratory risks."
+        },
+        "confidence_and_limitations": {
+          "confidence": [
+            "High in chronic trend detection from conditions/observations.",
+            "Moderate in infection-allergy links due to sparse allergies data."
+          ],
+          "limitations": [
+            "Limited social factors; informal care not captured.",
+            "Adherence inferred indirectly from meds."
+          ],
+          "disclaimer": "Supports clinical decision-making."
+        }
+      },
+      "8d4c4326-e9de-4f45-9a4c-f8c36bff89ae": {
+        "name": "David Ramirez",
+        "archetype": "Insurance Shock Patient",
+        "risk_score": 0.3, 
+        "age": 37,
+        "gender": "Male",
+        "ai_patient_state": "This patient's profile reveals a relatively stable baseline disrupted by episodic viral infections (sinusitis and pharyngitis in 2011), but the latex allergy adds a layer of procedural caution, especially around his long-term health management. With no chronic conditions flagged and solid vitals (e.g., BMI 22.4, never smoker), his overall health appears resilient, though recent wellness checks warrant ongoing vigilance to ensure no subtle metabolic shifts emerge.",
+        "ai_temporal_reasoning": "The timeline shows health management from 2010-2013, interrupted by acute infections in 2011 that resolved quickly without escalation. Post-2013, stability held, but the absence of recent observations might mask gradual changes. Insurance transitions (multiple in payer_transitions.csv) coincide with care gaps, potentially explaining why follow-ups weren't as consistent as ideal for someone with allergy risks.",
+        "ai_recommended_focus": [
+          "Monitor for allergy-related complications in routine procedures: with latex sensitivity, ensure all encounters use alternative materials to avoid anaphylactic risks.",
+          "Reinforce surveillance: track for any emerging metabolic issues like prediabetes, given family history patterns in similar archetypes.",
+          "Optimize continuity: review current options for efficacy and cost, considering his stable coverage to prevent unplanned disruptions."
+        ],
+        "ai_conclusion": "His low baseline risk offers a strong foundation, but proactive allergy and health strategies could prevent minor issues from becoming barriers, keeping him on a path of sustained wellness.",
+        "predictions": "Estimated hospitalization risk in the next 12 months: ~0.3, assuming continued monitoring.",
+        "care_gaps": "AI Gap Alert: No recent wellness check—recommend annual screening (careplans.csv).",
+        "suggested_action": "Refer for allergy-safe renewal.",
+        "cost_coverage_insight": "Out-of-pocket for meds: ~$15K (medications.csv); switch to generics under Humana/UnitedHealthcare for savings (payers.csv).",
+        "co_pilot_prompts": {
+          "Summarize this patient in one paragraph": "David Ramirez, 37M, has episodic viral infections with latex allergy; stable vitals and no chronic issues suggest low risk.",
+          "What should I focus on in the next visit?": "Allergy review, metabolic screening, and continuity planning.",
+          "Why is this patient low risk?": "No chronic conditions and stable vitals minimize escalation potential."
+        },
+        "confidence_and_limitations": {
+          "confidence": [
+            "High in episodic event analysis from conditions.",
+            "Moderate in metabolic projections due to limited family data."
+          ],
+          "limitations": [
+            "Informal health behaviors not observed.",
+            "Allergy impacts inferred from sparse data."
+          ],
+          "disclaimer": "Supports clinical decision-making."
+        }
+      },
+      "b58731cc-2d8b-4c2d-b327-4cab771af3ef": {
+        "name": "Eleanor Brooks",
+        "archetype": "Fragmented Care Victim",
+        "risk_score": 0.45,  
+        "age": 32,
+        "gender": "Female",
+        "ai_patient_state": "For this young adult, the forearm fracture in 2014 and normal pregnancy in 2018-2019 represent key events, but the penicillin allergy heightens vigilance for infections or procedures. Stable metrics like BMI 24.5 and BP 118/78 suggest good recovery, though the wisdom tooth extraction in 2016 hints at potential dental-oral health intersections that could indirectly affect systemic well-being if not monitored.",
+        "ai_temporal_reasoning": "The fracture in 2014 was isolated with prompt care (X-ray and immobilization in procedures.csv), resolving without complications, while the pregnancy followed a standard prenatal course with ultrasounds and tests. However, the gap between 2016 dental procedure and 2018 pregnancy shows no interim wellness checks, which might have caught subtle shifts; insurance changes (payer_transitions.csv) around that time could explain the discontinuity.",
+        "ai_recommended_focus": [
+          "Allergy-integrated infection prevention: with penicillin sensitivity, prioritize alternative antibiotics in any acute scenarios to avoid resistance or reactions.",
+          "Post-injury musculoskeletal follow-up: assess for any lingering effects from the fracture, perhaps with periodic bone density checks given her age.",
+          "Holistic reproductive and preventive care: build on pregnancy success with annual screenings to maintain her high QOLS of 0.85."
+        ],
+        "ai_conclusion": "This patient's events are discrete and well-managed, but bridging care gaps with consistent monitoring will safeguard against unforeseen escalations, leveraging her strong baseline health.",
+        "predictions": "Estimated hospitalization risk in the next 12 months: ~0.45, lower with influenza compliance.",
+        "care_gaps": "AI Gap Alert: Post-fracture follow-up incomplete; ensure bone health screening (careplans.csv).",
+        "suggested_action": "Schedule influenza booster and allergy review.",
+        "cost_coverage_insight": "High costs from contraceptive procedures (~$193K medications.csv/procedures.csv); Aetna/Cigna coverage minimized, but generics for Etonogestrel could save 20%.",
+        "co_pilot_prompts": {
+          "Summarize this patient in one paragraph": "Eleanor Brooks, 32F, recovered from forearm fracture and pregnancy; penicillin allergy noted with stable vitals.",
+          "What should I focus on in the next visit?": "Allergy prevention, bone health, and preventive screenings.",
+          "Why is this patient medium risk?": "Past events resolved, but gaps could lead to minor escalations."
+        },
+        "confidence_and_limitations": {
+          "confidence": [
+            "High in recovery assessment from procedures.",
+            "Moderate in long-term allergy risks."
+          ],
+          "limitations": [
+            "Limited post-event data; informal care not visible."
+          ],
+          "disclaimer": "Supports clinical decision-making."
+        }
+      },
+      "1d604da9-9a81-4ba9-80c2-de3375d59b40": {
+        "name": "James Whitman",
+        "archetype": "Preventive Failure Case",
+        "risk_score": 0.2,  
+        "age": 34,
+        "gender": "Male",
+        "ai_patient_state": "This mid-30s male presents with a history of chronic sinusitis since 2001, marked by recurrent episodes that could signal underlying environmental or immune factors, though no allergies are documented. Vitals remain stable (e.g., BMI 23.5, BP 119/82), but the persistence of this condition without escalation to more severe respiratory issues suggests an opportunity for deeper root-cause exploration.",
+        "ai_temporal_reasoning": "Sinusitis onset in 2001 has been ongoing without resolution dates in conditions.csv, with acute bronchitis in 2011 adding a layer; however, the timeline shows no frequent escalations, possibly due to effective symptomatic management. Gaps in observations post-2012 might indicate under-monitoring, especially with payer stability potentially enabling more proactive care.",
+        "ai_recommended_focus": [
+          "Investigate sinusitis triggers: consider environmental assessments or imaging (though none in imaging_studies.csv yet) to address chronicity.",
+          "Preventive respiratory strategy: incorporate immunizations (e.g., influenza in immunizations.csv) to mitigate acute flares.",
+          "Lifestyle integration: encourage habits to support sinus health, given his stable metrics, to prevent progression."
+        ],
+        "ai_conclusion": "By targeting the root of his chronic sinusitis now, we can likely resolve this longstanding issue and elevate his overall preventive health posture.",
+        "predictions": "Estimated hospitalization risk in the next 12 months: ~0.2.",
+        "care_gaps": "AI Gap Alert: No recent immunizations beyond basics—recommend full panel (immunizations.csv).",
+        "suggested_action": "Preventive wellness visit.",
+        "cost_coverage_insight": "Low expenses (~$271K procedures.csv); Guardian coverage stable, minimal out-of-pocket.",
+        "co_pilot_prompts": {
+          "Summarize this patient in one paragraph": "James Whitman, 34M, has chronic sinusitis with resolved bronchitis; stable vitals indicate low risk.",
+          "What should I focus on in the next visit?": "Sinus triggers, immunizations, and lifestyle support.",
+          "Why is this patient low risk?": "Persistent but non-escalating condition with good management."
+        },
+        "confidence_and_limitations": {
+          "confidence": [
+            "High in chronic persistence analysis.",
+            "Moderate in environmental factor inference."
+          ],
+          "limitations": [
+            "No allergy data; under-monitoring gaps."
+          ],
+          "disclaimer": "Supports clinical decision-making."
+        }
+      },
+      "fca3178e-fb68-41c3-8598-702d3ca68b96": {
+        "name": "Olivia Brown",
+        "archetype": "Chronic Risk Accumulator",
+        "risk_score": 0.9,
+        "age": 75,
+        "gender": "Female",
+        "ai_patient_state": "This elderly patient's narrative is dominated by chronic congestive heart failure since 1987, compounded by osteoporosis in 1984 and prediabetes in 1979, creating a fragile multi-system profile. Allergies to mould add respiratory vulnerability, while devices like stents and pacemakers (devices.csv) indicate advanced cardiac interventions.",
+        "ai_temporal_reasoning": "Heart failure emerged in 1987 amid earlier osteoporosis, with acute events like strep throat in 1984; careplans show diabetes management from 1979 but gaps in follow-through. Imaging (chest X-rays in imaging_studies.csv) and procedures (echocardiography) cluster around exacerbations, suggesting reactive rather than preventive care led to progression.",
+        "ai_recommended_focus": [
+          "Optimize cardiac-polypharmacy balance: review meds like metoprolol and furosemide (medications.csv) for interactions in frail states.",
+          "Bone and metabolic synergy: integrate osteoporosis treatment with prediabetes plans to prevent falls or fractures.",
+          "Allergy-informed respiratory guard: mould sensitivity warrants environmental modifications to avoid infections."
+        ],
+        "ai_conclusion": "Early multi-morbidity coordination could extend quality years, drawing lessons from this case's trajectory.",
+        "predictions": "Estimated hospitalization risk: High due to chronic issues.",
+        "care_gaps": "AI Gap Alert: Gaps in diabetes management (careplans.csv prediabetes plan).",
+        "suggested_action": "Cardiac follow-up and allergy integration.",
+        "cost_coverage_insight": "High lifetime costs (~$1.3M medications.csv); Multiple payers, focus on stabilization.",
+        "co_pilot_prompts": {
+          "Summarize this patient in one paragraph": "Margaret Collins (Elderly), 75F, has heart failure, osteoporosis, and prediabetes with mould allergy; no devices indicate advanced care.",
+          "What should I focus on in the next visit?": "Meds review, bone/metabolic integration, allergy mods.",
+          "Why is this patient high risk despite treatment?": "Multi-system fragility and gaps allow progression despite interventions."
+        },
+        "confidence_and_limitations": {
+          "confidence": [
+            "High in cardiac device analysis.",
+            "Moderate in frailty projections."
+          ],
+          "limitations": [
+            "End-of-life data limited; informal support unknown."
+          ],
+          "disclaimer": "Supports clinical decision-making."
+        }
+      },
+      "fc817953-cc8b-45db-9c85-7c0ced8fa90d": {
+        "name": "William Miller",
+        "archetype": "Insurance Shock Patient",
+        "risk_score": 0.75,
+        "age": 70,
+        "gender": "Male",
+        "ai_patient_state": "At 70 years, this patient's longevity is notable despite osteoarthritis (1957), osteoporosis (1984), and stroke (2009); chronic sinusitis since 1988 adds burden, with no allergies but multiple viral episodes. Wellness-focused careplans emphasize musculoskeletal support, but the extensive payer transitions reflect system navigation challenges.",
+        "ai_temporal_reasoning": "Osteoarthritis in 1957 initiated mobility issues, exacerbated by osteoporosis in 1984; stroke in 2009 marked a pivotal decline, with sinusitis flares (conditions.csv) post-2010. Frequent wellness encounters (encounters.csv) show proactive monitoring, but insurance shifts (payer_transitions.csv) may have disrupted continuity.",
+        "ai_recommended_focus": [
+          "Frailty-targeted mobility: enhance musculoskeletal care (careplans.csv) with PT to prevent falls.",
+          "Post-stroke surveillance: monitor for recurrent vascular events given history.",
+          "System navigation support: stabilize payers to ensure uninterrupted access."
+        ],
+        "ai_conclusion": "His resilience highlights the value of consistent wellness; for peers, minimizing administrative barriers could sustain independence longer.",
+        "predictions": "Estimated hospitalization risk in the next 12 months: ~0.75.",
+        "care_gaps": "AI Gap Alert: Gaps in advanced age screenings (careplans.csv musculoskeletal).",
+        "suggested_action": "Geriatric assessment.",
+        "cost_coverage_insight": "High lifetime expenses (~$1.5M procedures.csv); Multiple payers (payer_transitions.csv), stabilize for cost control.",
+        "co_pilot_prompts": {
+          "Summarize this patient in one paragraph": "David Ramirez (Elderly), 70M, has osteoarthritis, osteoporosis, stroke history with sinusitis; no allergies.",
+          "What should I focus on in the next visit?": "Mobility PT, stroke monitoring, system support.",
+          "Why is this patient high risk due to age?": "Age-related frailty and history amplify risks despite management."
+        },
+        "confidence_and_limitations": {
+          "confidence": [
+            "High in stroke recovery assessment.",
+            "Moderate in sinusitis chronicity."
+          ],
+          "limitations": [
+            "Aging data gaps; no allergy info."
+          ],
+          "disclaimer": "Supports clinical decision-making."
+        }
+      }
+    },
+    "confidence_and_limitations": {
+      "confidence": [
+        "High confidence in longitudinal risk trajectories from multi-year conditions and observations data.",
+        "High confidence in care continuity and system-level signals via encounters and careplans.",
+        "Moderate confidence in treatment adherence inference, as indirect from medications and procedures."
+      ],
+      "limitations": [
+        "Social determinants beyond recorded insurance and location data (patients.csv) are not fully visible.",
+        "Patient preferences and informal care behaviors are not directly observed in the synthetic records.",
+        "Moderate confidence in allergy impacts, as allergies.csv is sparse for some patients."
+      ],
+      "disclaimer": "This AI system supports — but does not replace — clinical decision-making."
+    },
+    "agent_footnote": {
+      "agents_involved": 7,
+      "datasets_analyzed": 9,
+      "population_context": "~2,287 longitudinal synthetic patients",
+      "agent_details": [
+        {
+          "agent": "Patient Context Agent",
+          "datasets": ["patients.csv"],
+          "role": "Demographics and baseline context"
+        },
+        {
+          "agent": "Condition Intelligence Agent",
+          "datasets": ["conditions.csv"],
+          "role": "Chronic disease burden analysis"
+        },
+        {
+          "agent": "Observation Analysis Agent",
+          "datasets": ["observations.csv"],
+          "role": "Longitudinal clinical trend detection"
+        },
+        {
+          "agent": "Care Continuity Agent",
+          "datasets": ["encounters.csv", "careplans.csv"],
+          "role": "Follow-up gaps and care rhythm analysis"
+        },
+        {
+          "agent": "Medication Integrity Agent",
+          "datasets": ["medications.csv"],
+          "role": "Treatment continuity assessment"
+        },
+        {
+          "agent": "Insurance Stability Agent",
+          "datasets": ["payer_transitions.csv"],
+          "role": "Coverage disruption detection"
+        },
+        {
+          "agent": "Clinical Synthesis Agent",
+          "datasets": ["all"],
+          "role": "Cross-agent reasoning and final insight synthesis" 
+        }
+      ]
+    }
+  }
+}

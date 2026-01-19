@@ -1,0 +1,7 @@
+streamlit
+pandas
+plotly
+loguru
+crewai # For agent orchestration (even if simulated via JSON for demo)
+python-dotenv # For loading .env
+openai  # For Azure OpenAI compatibility
